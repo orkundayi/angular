@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "./header/header.component";
 import { UserComponent } from "./user/user.component";
+import { DUMMY_USERS } from './dummy-users';
 
 @Component({
     selector: 'app-root',
@@ -10,5 +11,9 @@ import { UserComponent } from "./user/user.component";
     imports: [HeaderComponent, UserComponent]
 })
 export class AppComponent {
-  title = 'my-angular-project';
+  users = DUMMY_USERS;
+
+  onSelected(id: string) {
+    alert(`Selected user with id: ${id}`);
+  }
 }
